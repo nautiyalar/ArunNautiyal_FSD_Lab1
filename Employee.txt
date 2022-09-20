@@ -1,0 +1,83 @@
+public class Employee {
+
+	String firstName;
+	String lastName;
+	String password;
+	String emailId;
+	String companyName = "XYZ";
+	String department;
+
+	public Employee()
+	{
+	
+	}
+	
+  public Employee(String fName, String lName, String dname )
+
+	   {
+	      this.firstName = fName;
+		  this.lastName = lName;
+		  this.department = dname;
+	    }
+	
+	
+	public void  generatePassword()
+	{
+		password = "admin123";
+	}
+	
+	public void generateEmailAddress ()
+	{
+	  emailId = firstName+"."+lastName+"@"+department+"."+companyName+".com";
+	}
+	
+	
+	public void showCredentials()
+	{
+		System.out.println("Dear "+ firstName+ "your generated credentials are as follows");
+		System.out.println("Email    ---> "+emailId);
+		System.out.println("Password ---> "+password);
+		
+			
+	}
+	
+	}
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+	    
+		Employee emp = new Employee(); 	
+	    		
+	    Scanner myObj = new Scanner(System.in);
+		
+		System.out.println("Please enter the  department from the following:");
+		System.out.println("1.Technical");
+		System.out.println("2.Admin");
+		System.out.println("3.Human Resource");
+		System.out.println("4.Legal");
+		
+		String dept = myObj.nextLine();
+		
+		
+		emp.firstName="Arun";
+		emp.lastName="Nautiyal";
+        emp.department = dept;
+        
+        
+        emp.generateEmailAddress ();
+        
+        emp.generatePassword();
+	    
+        emp.showCredentials();	
+	
+}
+}
+
+
+
+
+
